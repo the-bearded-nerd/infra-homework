@@ -1,0 +1,17 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:cjs": "node -r './build/loader.cjs' ./build/test/index.cjs",
+    "test:esm": "node --import ./build/register.mjs ./build/test/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "packageManager": "yarn@4.5.3",
+  "dependencies": {
+    "yaml": "2.6.1"
+  }
+}
