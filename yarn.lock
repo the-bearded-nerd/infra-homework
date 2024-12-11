@@ -299,7 +299,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.16.0":
+"eslint@npm:9.16.0":
   version: 9.16.0
   resolution: "eslint@npm:9.16.0"
   dependencies:
@@ -499,7 +499,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "infra-homework@workspace:."
   dependencies:
-    eslint: "npm:^9.16.0"
+    eslint: "npm:9.16.0"
     yaml: "npm:2.6.1"
   languageName: unknown
   linkType: soft
