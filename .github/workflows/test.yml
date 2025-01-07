@@ -13,3 +13,48 @@ jobs:
       - run: yarn set version berry
       - run: yarn set version 2.4.2
       - run: yarn install
+
+  build:
+    needs: install-deps
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install yarn
+      - run: yarn set version berry
+      - run: yarn set version 2.4.2
+      - run: yarn build
+
+  linters:
+    needs: install-deps
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install yarn
+      - run: yarn set version berry
+      - run: yarn set version 2.4.2
+      - run: yarn linters
+
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install yarn
+      - run: yarn set version berry
+      - run: yarn set version 2.4.2
+      - run: yarn deploy
