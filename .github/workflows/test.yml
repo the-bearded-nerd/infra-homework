@@ -10,4 +10,5 @@ jobs:
         with:
           node-version: '22'
       - run: npm install yarn
-      - run: yarn install --frozen-lockfile
+      - run: yarn set version berry
+      - run: yarn set version 2.4.2
