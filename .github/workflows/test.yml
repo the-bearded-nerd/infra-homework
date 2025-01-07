@@ -12,3 +12,4 @@ jobs:
       - run: npm install yarn
       - run: yarn set version berry
       - run: yarn set version 2.4.2
+      - run: yarn install
