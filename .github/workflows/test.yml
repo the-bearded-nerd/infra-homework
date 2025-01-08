@@ -20,13 +20,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install yarn
-      - run: yarn set version berry
-      - run: yarn set version 2.4.2
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
       - run: yarn build
 
   linters:
@@ -39,10 +38,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install yarn
-      - run: yarn set version berry
-      - run: yarn set version 2.4.2
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
       - run: yarn linters
 
   deploy:
@@ -55,8 +52,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install yarn
-      - run: yarn set version berry
-      - run: yarn set version 2.4.2
-      - run: yarn install
+          cache: 'yarn'
+      - run: yarn install --frozen-lockfile
       - run: yarn deploy
